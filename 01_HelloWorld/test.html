@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>01_HelloWorld</title>
-</head>
-<body>
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>01_HelloWorld</title>
+	</head>
+	<body>
 
 <!--
   1. 引入Vue.js
@@ -15,6 +15,29 @@
   4. 显示数据 : {{xxx}}
   5. 理解vue的mvvm实现
 -->
-
-</body>
-</html>
+<!-- 模板界面  html+js
+        指令：指令的属性值是一个js表达式 v-model="msg"
+        插值：在标签体文本中使用{{}}包含一个js表达式，自动显示对应的值
+-->
+	<div id="test">
+			<input type="text" v-model="msg">
+			<p>HELLO {{msg}}</p>
+	</div>
+	<script src="../js/vue.js"></script>  
+	<script>
+		const vm = new Vue({//配置对象
+				el:'#test',//指定根element(选择器) 指定模板区域
+				data:{ //为模板提供数据
+					msg:'atguigu'
+				}
+			})
+			/* 
+			实现了自动监听并且改变现实  相当于原生Input监听
+			oninput 当input的value值发生变化时就会触发，不用等到失去焦点（与onchange的区别）
+			*/
+	setTimeout(() => {
+		vm.msg='123231'//数据代理技术
+	}, 1000);
+	</script>
+	</body>
+	</html> 
