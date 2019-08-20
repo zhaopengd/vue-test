@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='UTF-8'>
+    <meta name='keywords' content='关键词'>
+    <meta name='description' content='描述的文字'>
+    <title>Document</title>
+</head>
+<body>
+  <div id="box" >
+      姓: <input type="text" placeholder="First Name" v-model="firstName"><br>
+      名: <input type="text" placeholder="Last Name" v-model="lastName"><br>
+      姓名1(单向): <input type="text" placeholder="Full Name1" :value='firstName+"-"+lastName'><br>
+  </div>
+  
+<script src="../js/vue.js"></script>
+  <script>
+    new Vue({
+      el:'#box',
+      data:{
+      firstName:'A',
+      lastName:'B',
+   },
+    })
+  
+  </script>
+
+</body>
+</html>

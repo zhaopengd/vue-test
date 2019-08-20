@@ -20,19 +20,19 @@
 		</style>
 </head>
 <body>
-	<div id="box"></div>
+	<div id="box">
+
+      <div class='box' :class='{active:isGreen}' @click='clickHandler'></div>	
+  </div>
 <script src="../js/vue.js"></script>
 <script>
 	new Vue({
 		el:'#box',
 		data:{
-			isGreen:'true',
-			isRed:'false',
+			isGreen:true,
+			isRed:false,   //為什麼這裡 寫不寫 引號都行
 		},
-		template:`
-		<div class='box' :class={active:isGreen} @click='clickHandler'></div>	
-		
-		`,
+	
 		methods: {
 			clickHandler(){
 				this.isGreen=!this.isGreen

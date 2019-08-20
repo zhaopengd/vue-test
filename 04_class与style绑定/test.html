@@ -32,6 +32,7 @@
 
 <div id="demo">
   <h2>1. class绑定: :class='xxx'</h2>
+  <p v-bind:class="myClass">xxx是字符串</p>
 
   <h2>2. style绑定</h2>
 
@@ -39,6 +40,17 @@
 
 <script type="text/javascript" src="../js/vue.js"></script>
 <script type="text/javascript">
+  const vm = new Vue({
+     // el:'#demo',
+      data() {
+        return {
+          myClass:'classA'
+        }
+      },
+    });
+vm.$mount('#demo')
+    
+
 
 </script>
 </body>
