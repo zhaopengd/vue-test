@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta name='keywords' content='关键词'>
+  <meta name='description' content='描述的文字'>
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app"></div>
+  <script src="../js/vue.js"></script>
+  <script>
+    // 全局组件的创建
+    Vue.component('Vbtn',{
+      template:`
+        <button>按钮</button>
+      `
+    })
+    
+    var Vheader = {
+      template: `
+          <div>
+           头部组件
+          </div>
+      `,
+    };
+    var Vaside = {
+      template: `
+          <div>
+           侧边栏组件
+          </div>
+      `,
+    };
+    var Vcontent = {
+      template: `
+          <div>
+           内容组件
+           <Vbtn/>
+          </div>
+      `,
+    };
+    // 声明子组件
+    var App = {
+      data() {
+        return {}
+      },
+      template: `
+       <div>
+          <Vheader/>
+          <div>
+            <Vaside/>
+            <Vcontent/>
+          </div>
+       </div>
+      `,
+      components: {
+        Vheader,
+        Vaside,
+        Vcontent
+      }
+    };
+
+    const vm = new Vue({
+      el: '#app',
+      data() {
+        return {
+
+        }
+      },
+      template: `
+        <App/>
+      `,
+      components: {
+        App
+      }
+    });
+  </script>
+
+
+
+</body>
+
+</html>
