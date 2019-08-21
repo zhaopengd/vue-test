@@ -15,7 +15,11 @@
     // 全局组件的创建
     Vue.component('Vbtn',{
       template:`
-        <button>按钮</button>
+        <button>
+        <slot>
+          按钮 
+        </slot>
+        </button>
       `
     })
     
